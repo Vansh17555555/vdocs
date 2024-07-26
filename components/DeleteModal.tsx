@@ -26,7 +26,7 @@ export const DeleteModal = ({ roomId }: DeleteModalProps) => {
     setLoading(true);
 
     try {
-     await deleteDocuments(roomId);
+      await deleteDocuments(roomId);
       setOpen(false);
     } catch (error) {
       console.log("Error notif:", error);
