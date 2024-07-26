@@ -12,7 +12,7 @@ import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary';
 import React from 'react';
 import { Liveblocks } from '@liveblocks/node';
 import {FloatingComposer, FloatingThreads, LiveblocksPlugin, liveblocksConfig, useEditorStatus} from "@liveblocks/react-lexical"
-import Loader from '../Loader';
+
 //import {FloatingToolbar} from "./plugins/FloatingToobarPlugin"
 import FloatingToolbar from './plugins/FloatingToobarPlugin';
 import { useThreads } from '@liveblocks/react/suspense';
@@ -50,7 +50,7 @@ export function Editor({roomId,currentUserType}:{roomId:string,currentUserType:U
         {currentUserType==="editor" && <DeleteModal roomId={roomId}/>}
         </div>
       <div className='edito-wrapper flex flex-col items-center justify-start'>
-        {status==='not-loaded'||status==="loading"?(<Loader/> ):(
+        {status==='not-loaded'||status==="loading"?(<div>loading</div> ):(
             <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10">
             <RichTextPlugin
               contentEditable={
